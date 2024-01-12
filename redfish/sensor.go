@@ -111,9 +111,9 @@ type Threshold struct {
 	// The duration the sensor value must not violate the threshold before the threshold is deactivated.
 	HysteresisDuration string
 	// The reading offset from the threshold value required to clear the threshold.
-	HysteresisReading float32
+	HysteresisReading float64
 	// The threshold value.
-	Reading float32
+	Reading float64
 }
 
 type Thresholds struct {
@@ -143,23 +143,23 @@ type SensorExcerpt struct {
 	// The link to the resource that provides the data for this sensor.
 	DataSourceURI string `json:"DataSourceUri"`
 	// The sensor value.
-	Reading float32
+	Reading float64
 }
 
 // Energy consumption (kWh).
 type SensorEnergykWhExcerpt struct {
 	// The apparent energy, in kilovolt-ampere-hour units
 	// for an electrical energy measurement.
-	ApparentkVAh float32
+	ApparentkVAh float64
 	// The link to the resource that provides the data for this sensor.
 	DataSourceURI string `json:"DataSourceUri"`
 	// The total accumulation value for this sensor.
-	LifetimeReading float32
+	LifetimeReading float64
 	// The reactive energy, in kilovolt-ampere-hours (reactive) units
 	// for an electrical energy measurement.
-	ReactivekVARh float32
+	ReactivekVARh float64
 	// The sensor value.
-	Reading float32
+	Reading float64
 	// The date and time when the time-based properties were last reset.
 	SensorResetTime string
 }
@@ -167,19 +167,19 @@ type SensorEnergykWhExcerpt struct {
 // Power consumption (W).
 type SensorPowerExcerpt struct {
 	// The product of voltage and current for an AC circuit, in volt-ampere units.
-	ApparentVA float32
+	ApparentVA float64
 	// The link to the resource that provides the data for this sensor.
 	DataSourceURI string `json:"DataSourceUri"`
 	// The phase angle (degrees) between the current and voltage waveforms.
-	PhaseAngleDegrees float32
+	PhaseAngleDegrees float64
 	// The quotient of real power (W) and apparent power (VA) for a circuit.
 	// PowerFactor is expressed in unit-less 1/100ths.
-	PowerFactor float32
+	PowerFactor float64
 	// The square root of the difference term of squared apparent VA and
 	// squared power (Reading) for a circuit, in VAR units.
-	ReactiveVAR float32
+	ReactiveVAR float64
 	// The sensor value.
-	Reading float32
+	Reading float64
 }
 
 // Voltage consumption (V).
@@ -187,13 +187,13 @@ type SensorVoltageExcerpt struct {
 	// (v1.1+) The crest factor for this sensor.
 	// The ratio of the peak measurement divided by the RMS measurement
 	// and calculated over same N line cycles.
-	CrestFactor float32
+	CrestFactor float64
 	// The link to the resource that provides the data for this sensor.
 	DataSourceURI string `json:"DataSourceUri"`
 	// The sensor value.
-	Reading float32
+	Reading float64
 	// (v1.1+) The total harmonic distortion (THD).
-	THDPercent float32
+	THDPercent float64
 }
 
 // Sensor represents the sensors located in the chassis and sub-components. (v1.9+)
@@ -205,71 +205,71 @@ type Sensor struct {
 	// ODataType is the odata type.
 	ODataType string `json:"@odata.type"`
 	// The estimated percent error of measured versus actual values.
-	Accuracy float32
+	Accuracy float64
 	// The adjusted maximum allowable operating value for this equipment based on the environmental conditions.
-	AdjustedMaxAllowableOperatingValue float32
+	AdjustedMaxAllowableOperatingValue float64
 	// The adjusted minimum allowable operating value for this equipment based on the environmental conditions.
-	AdjustedMinAllowableOperatingValue float32
+	AdjustedMinAllowableOperatingValue float64
 	// Apparent energy (kVAh).
-	ApparentkVAh float32
+	ApparentkVAh float64
 	// The product of voltage and current for an AC circuit, in volt-ampere units.
-	ApparentVA float32
+	ApparentVA float64
 	// The average sensor value.
-	AverageReading float32
+	AverageReading float64
 	// The interval over which the average sensor value is calculated.
 	AveragingInterval string
 	// Indicates that enough readings were collected to calculate the average sensor reading over the averaging interval time.
 	AveragingIntervalAchieved bool
 	// The calibration offset applied to the Reading.
-	Calibration float32
+	Calibration float64
 	// The date and time that the sensor was last calibrated.
 	CalibrationTime string
 	// The crest factor for this sensor.
-	CrestFactor float32
+	CrestFactor float64
 	// The combination of current-carrying conductors.
 	ElectricalContext common.ElectricalContext
 	// The implementation of the sensor.
 	Implementation SensorImplementation
 	// The total accumulation value for this sensor.
-	LifetimeReading float32
+	LifetimeReading float64
 	// Deprecated: (v1.1) The power load utilization for this sensor.
-	LoadPercent float32
+	LoadPercent float64
 	// The location information for this sensor.
 	Location common.Location
 	// The lowest sensor value.
-	LowestReading float32
+	LowestReading float64
 	// The time when the lowest sensor value occurred.
 	LowestReadingTime string
 	// The maximum allowable operating value for this equipment.
-	MaxAllowableOperatingValue float32
+	MaxAllowableOperatingValue float64
 	// The minimum allowable operating value for this equipment.
-	MinAllowableOperatingValue float32
+	MinAllowableOperatingValue float64
 	// The peak sensor value.
-	PeakReading float32
+	PeakReading float64
 	// The time when the peak sensor value occurred.
 	PeakReadingTime string
 	// The phase angle (degrees) between the current and voltage waveforms.
-	PhaseAngleDegrees float32
+	PhaseAngleDegrees float64
 	// The area or device to which this sensor measurement applies.
 	PhysicalContext common.PhysicalContext
 	// The usage or location within a device to which this sensor measurement applies.
 	PhysicalSubContext common.PhysicalSubContext
 	// The power factor for this sensor.
-	PowerFactor float32
+	PowerFactor float64
 	// The number of significant digits in the reading.
-	Precision float32
+	Precision float64
 	// Reactive energy (kVARh).
-	ReactivekVARh float32
+	ReactivekVARh float64
 	// The square root of the difference term of squared apparent VA and squared power (Reading) for a circuit, in VAR units.
-	ReactiveVAR float32
+	ReactiveVAR float64
 	// The sensor value.
-	Reading float32
+	Reading float64
 	// The basis for the reading of this sensor.
 	ReadingBasis ReadingBasisType
 	// The maximum possible value for this sensor.
-	ReadingRangeMax float32
+	ReadingRangeMax float64
 	// The minimum possible value for this sensor.
-	ReadingRangeMin float32
+	ReadingRangeMin float64
 	// The date and time that the reading was acquired from the sensor.
 	ReadingTime string
 	// The type of sensor.
@@ -277,7 +277,7 @@ type Sensor struct {
 	// The units of the reading and thresholds.
 	ReadingUnits string
 	// Deprecated: (v1.1) The time interval between readings of the physical sensor.
-	SensingFrequency float32
+	SensingFrequency float64
 	// The time interval between readings of the sensor.
 	SensingInterval string
 	// The group of sensors that provide readings for this sensor.
@@ -285,11 +285,11 @@ type Sensor struct {
 	// The date and time when the time-based properties were last reset.
 	SensorResetTime string
 	// The rotational speed.
-	SpeedRPM float32
+	SpeedRPM float64
 	// 	The status and health of the resource and its subordinate or dependent resources.
 	Status common.Status
 	// The total harmonic distortion (THD).
-	THDPercent float32
+	THDPercent float64
 	// The set of thresholds defined for this sensor.
 	Thresholds Thresholds
 	// This property shall represent the type of input voltage the sensor monitors.
